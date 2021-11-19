@@ -1,0 +1,19 @@
+---
+
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: check that i have log file for all hosts on my local machine
+      stat: path=/var/log/hosts/{{inventory_hostname}}.log
+      delegate_to: localhost
+#-
+ # hosts: all
+  #user: root
+
+ # tasks:
+  #  - name: Configure a MOTD (message of the day)
+   #   copy:
+    #    src: centos_motd
+     #   dest: /etc/motd
+
+...
